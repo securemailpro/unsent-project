@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unsent Project | Meaning, Stories & Message Archive</title>
+    <meta name="description" content="Explore the Unsent Project, a digital archive of unsent messages. Discover the psychology, impact, and cultural significance of this raw form of emotional expression.">
+    <meta name="keywords" content="unsent project, unsent messages, digital expression, emotional release, anonymous confessions, heartbreak, love letters, digital archive">
+    <meta name="author" content="Unsent Project">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://unsentproject.com/">
+    <meta property="og:title" content="The Unsent Project: The Internet's Rawest Form of Expression">
+    <meta property="og:description" content="A digital archive of unsent messages - love, regret, and everything in between.">
+    <meta property="og:image" content="https://unsentproject.com/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://unsentproject.com/">
+    <meta property="twitter:title" content="The Unsent Project: The Internet's Rawest Form of Expression">
+    <meta property="twitter:description" content="A digital archive of unsent messages - love, regret, and everything in between.">
+    <meta property="twitter:image" content="https://unsentproject.com/images/twitter-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <style>
+        :root {
+            --primary-color: #6d5d94;
+            --secondary-color: #a593c5;
+            --accent-color: #e9a6a6;
+            --light-color: #f8f5f9;
+            --dark-color: #2a2438;
+            --text-color: #333333;
+            --light-text: #f8f5f9;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light-text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(42, 36, 56, 0.8), rgba(42, 36, 56, 0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%236d5d94"/><path d="M0 0L100 100M100 0L0 100" stroke="%23a593c5" stroke-width="1"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-text);
+            text-align: center;
+            padding: 6rem 0;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            background-color: #ffb3b3;
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+        
+        /* What Is Section */
+        .what-is {
+            background-color: white;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .content-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .content-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .message-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        
+        .message-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .message-list li::before {
+            content: '•';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+        }
+        
+        .content-visual {
+            background-color: var(--light-color);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .message-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .message-card:last-child {
+            margin-bottom: 0;
+        }
+        
+        .message-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .message-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.7;
+        }
+        
+        /* Why Relatable Section */
+        .why-relatable {
+            background-color: var(--light-color);
+        }
+        
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        /* Cultural Archive Section */
+        .cultural-archive {
+            background-color: white;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--secondary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: var(--light-color);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+        
+        /* Psychology Section */
+        .psychology {
+            background-color: var(--light-color);
+        }
+        
+        .psychology-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .psychology-list {
+            list-style: none;
+        }
+        
+        .psychology-list li {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .psychology-list h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            background-color: white;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .faq-question {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+        
+        .faq-answer {
+            background-color: var(--light-color);
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--light-text);
+            text-align: center;
+            padding: 5rem 0;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-text);
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            transition: var(--transition);
+            opacity: 0.8;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .content-grid,
+            .psychology-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .timeline-item:nth-child(odd)::after,
+            .timeline-item:nth-child(even)::after {
+                left: 21px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: var(--shadow);
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0;
+                text-align: center;
+                padding: 0.8rem 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 4rem 0;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+            
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <span class="logo-icon">✉️</span>
+                <span>Unsent Project</span>
+            </a>
+            <nav>
+                <button class="mobile-menu-btn">☰</button>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Explore Messages</a></li>
+                    <li><a href="#">Submit</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>The Unsent Project: The Internet's Rawest Form of Expression</h1>
+            <p>A digital archive of unsent messages - love, regret, and everything in between. Explore millions of heartfelt confessions that never reached their intended recipients.</p>
+            <a href="#" class="cta-button">Explore Messages</a>
+        </div>
+    </section>
+
+    <!-- What Is Section -->
+    <section class="what-is">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Exactly Is the Unsent Project?</h2>
+                <p>A massive digital collection of anonymous messages written to past lovers, ex-best friends, crushes, and people who left an emotional mark.</p>
+            </div>
+            <div class="content-grid">
+                <div class="content-text">
+                    <h3>A Safe Space for Unsent Words</h3>
+                    <p>Each message is something the writer never actually sent — hence the name. These messages often include things left unsaid, confessions of love or regret, apologies that never reached their destination, and feelings someone didn't know how to express in real life.</p>
+                    <p>Over time, the <a href="https://unsentprojects.org/">Unsent Project</a> has transitioned from an art series into a global emotional phenomenon. It's become a place where people spill their hearts without judgment, where strangers read each other's raw truth, and where unfiltered emotions become a form of art.</p>
+                    <ul class="message-list">
+                        <li>Things left unsaid</li>
+                        <li>Confessions of love or regret</li>
+                        <li>Apologies that never reached their destination</li>
+                        <li>Feelings someone didn't know how to express</li>
+                    </ul>
+                </div>
+                <div class="content-visual">
+                    <div class="message-card">
+                        <p class="message-text">"I wish I had told you how I really felt. Maybe things would be different now."</p>
+                        <div class="message-meta">
+                            <span>To: Alex</span>
+                            <span>#regret</span>
+                        </div>
+                    </div>
+                    <div class="message-card">
+                        <p class="message-text">"I still think about you every time I hear that song. I hope you're happy."</p>
+                        <div class="message-meta">
+                            <span>To: Jamie</span>
+                            <span>#nostalgia</span>
+                        </div>
+                    </div>
+                    <div class="message-card">
+                        <p class="message-text">"I'm sorry for the way things ended. You deserved better from me."</p>
+                        <div class="message-meta">
+                            <span>To: Sam</span>
+                            <span>#apology</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Relatable Section -->
+    <section class="why-relatable">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why the Unsent Project Feels So Relatable</h2>
+                <p>Humans are wired to leave things unsaid. Whether it's fear, timing, ego, or heartbreak — almost everyone has a message they never sent but never forgot.</p>
+            </div>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-icon">💔</div>
+                    <h3>Unspoken Heartbreak</h3>
+                    <p>The pain of relationships that ended without proper closure, leaving words trapped inside that needed to be released.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">😶</div>
+                    <h3>Fear-Free Honesty</h3>
+                    <p>Sometimes the truth feels too intense, too embarrassing, or too vulnerable to deliver directly. The Unsent Project provides an alternative.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔄</div>
+                    <h3>Closure Without Contact</h3>
+                    <p>People often revisit old memories long after relationships end. Instead of reopening wounds, they pour emotions into this safe container.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultural Archive Section -->
+    <section class="cultural-archive">
+        <div class="container">
+            <div class="section-title">
+                <h2>How the Unsent Project Became a Cultural Digital Archive</h2>
+                <p>An artistic reinvention of human emotion that has evolved into a permanent record of modern feelings.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Artistic Beginning</h3>
+                        <p>The Unsent Project started as an artistic experiment, introducing color-coded themes and postcard-style layouts that turned emotional expression into visual statements.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Community Growth</h3>
+                        <p>Unlike standard confession blogs that attract random gossip, this project became a safe community centered around love, loss, and longing.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Emotional Archive</h3>
+                        <p>Every message becomes part of a database that reflects social patterns — heartbreak trends, emotional behaviors, and the way relationships evolve with technology.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Global Phenomenon</h3>
+                        <p>Today, the Unsent Project stands as a cultural touchstone, resonating across generations and serving as a mirror to our collective emotional experiences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Psychology Section -->
+    <section class="psychology">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Psychology Behind Unsent Messages</h2>
+                <p>Why do people send messages into the void instead of confronting someone directly?</p>
+            </div>
+            <div class="psychology-content">
+                <div>
+                    <p>Psychologists often describe unsent messages as a form of emotional catharsis. When you type your truth but don't send it, you still lighten the emotional load.</p>
+                    <p>The Unsent Project uniquely merges emotion, aesthetics, and storytelling, making it psychologically comforting and artistically appealing.</p>
+                </div>
+                <div>
+                    <ul class="psychology-list">
+                        <li>
+                            <h4>Emotional Relief</h4>
+                            <p>Writing how you feel — even if nobody sees it — helps you process complex emotions. Many users say that submitting feels like free therapy.</p>
+                        </li>
+                        <li>
+                            <h4>Creative Expression</h4>
+                            <p>For many, the platform serves as a creative outlet where emotions become poetry and heartbreak turns into art.</p>
+                        </li>
+                        <li>
+                            <h4>Validation Without Exposure</h4>
+                            <p>You don't need to reveal your identity or worry about being misunderstood. The message simply exists, and that alone makes people feel heard.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about the Unsent Project</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is the Unsent Project?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>It's a massive collection of anonymous, unsent messages written about love, heartbreak, regret, and memories. People submit messages they never sent to the person they're about.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Why do people submit unsent messages?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>To express emotions they're holding inside, to find closure, or simply to release feelings without contacting the actual person.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is the Unsent Project anonymous?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes. Users don't need to reveal personal details. The anonymity makes emotional expression feel safe.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do people use it for healing?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. Writing unsent messages helps people process their emotions, gain closure, and understand their own feelings better.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Share Your Unsent Message?</h2>
+            <p>Join millions who have found comfort, closure, and connection through sharing what was left unsaid.</p>
+            <a href="#" class="cta-button">Submit Your Message</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Unsent Project</h3>
+                    <p>A digital archive of unsent messages, providing a safe space for emotional expression and connection.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Facebook">👍</a>
+                        <a href="#" aria-label="TikTok">🎵</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Recent Messages</a></li>
+                        <li><a href="#">Popular Themes</a></li>
+                        <li><a href="#">Color Collections</a></li>
+                        <li><a href="#">Global Messages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About the Project</a></li>
+                        <li><a href="#">Submission Guidelines</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Unsent Project. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+        
+        // FAQ toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.classList.toggle('active');
+                
+                // Toggle the plus/minus icon
+                const icon = question.querySelector('span:last-child');
+                icon.textContent = answer.classList.contains('active') ? '−' : '+';
+            });
+        });
+    </script>
+</body>
+</html>
